@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Runas</title>
+    <link rel="icon" href="lol.ico" type="image/png">
+    <style type="text/css">
+			
+			body {
+                background-size: 1700px;
+                background-position:top;
+            }
+            
+			* {
+				margin:0px;
+				padding:0px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+            
+			#header {
+				margin:auto;
+				width:auto;
+			}
+            
+            .volver {
+				position: absolute;
+                top: 0px;
+                left: 0%;
+                z-index: 1;
+			}
+            
+            .volver:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+			}
+			
+            table {
+                margin: inherit;
+            }
+            
+			ul, ol {
+				list-style:none;
+			}
+            
+            nav {
+                margin: auto;
+                width: 177px;
+            }
+			
+			.nav > li {
+				float:left;
+                margin: 0px;
+			}
+            
+            .nav {
+                font-size:10pt;
+            }
+            
+            .nav li a {
+				color:#ffffff;
+				text-decoration:none;
+			}
+			
+			.nav li:hover {
+				background-color:rgba(0, 0, 0, 0.5);
+                color: #ffffff;
+			}
+            
+            .nav li table tr td:hover {
+                background-color: rgba(0, 0, 0, 0.25);
+			}
+			
+			.nav .objetos ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav .objetos:hover > ul {
+				display:block;
+			}
+			
+			.nav .objetos ul li {
+                float: left;
+				background-color:rgba(0, 0, 0, 0.5);
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav .objetos ul li:hover {
+				background-color:rgba(75, 75, 75, 0.5);
+			}
+			
+			.nav .objetos ul li table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:-550px;
+				top:36px;
+			}
+			
+			.nav .objetos ul li:hover > table {
+				display:block;
+			}
+            
+            .nav .runas table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left: 10px;
+                top: 158px;
+			}
+			
+			.nav .runas:hover > table {
+				display:block;
+			}
+			
+			.nav .runas table .clave td table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:1218px;
+				top:0px;
+			}
+			
+			.nav .runas table .clave td:hover > table {
+				display:block;
+			}
+			
+			.nav .runas table .dominio td table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:1218px;
+				top:198px;
+			}
+			
+			.nav .runas table .dominio td:hover > table {
+				display:block;
+			}
+			
+			.nav .runas table .valor td table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:1218px;
+				top:396px;
+			}
+			
+			.nav .runas table .valor td:hover > table {
+				display:block;
+			}
+			
+			.nav .runas table .inspiracion td table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:1218px;
+				top:594px;
+			}
+			
+			.nav .runas table .inspiracion td:hover > table {
+				display:block;
+			}
+            
+            .nav .hechizos table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left: 431px;
+                top: 158px;
+			}
+			
+			.nav .hechizos:hover > table {
+				display:block;
+			}
+			
+			.nav .hechizos table tr td table {
+				color: #ffffff;
+                display:none;
+				position:absolute;
+                padding: 0px;
+				min-width:140px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 20pt;
+                left:458px;
+				top:0px;
+			}
+			
+			.nav .hechizos table tr td:hover > table {
+				display:block;
+			}
+            
+            .clave {
+                color: #ffd800;
+            }
+            
+            .dominio {
+                color: #ff0000;
+            }
+            
+            .valor {
+                color: #00ff00;
+            }
+            
+            .inspiracion {
+                color: #00a7ff;
+            }
+			
+    </style>
+</head>
+<body background="https://images2.alphacoders.com/913/thumb-1920-913622.jpg">
+    
+    <div id="header">
+    
+    <header>
+        <div class="volver"><p>
+            <a href="index.html"><img src="https://www.pinclipart.com/picdir/big/338-3385254_download-png-flecha-girando-a-la-izquierda-clipart.png" alt="" width="40px"></a>
+        </p>
+        </div>
+        
+        <h1 align="center" style="font-size: 50pt">
+            Configuraciones
+        </h1>
+    </header>
+    
+    <nav>
+        <ul class="nav">
+            <li class="objetos">
+                <img src="items/liandrystorment.png" alt="objetos" width="59px">
+                <br>Objetos
+                    <ul>
+						<li class="fisico">
+						    Físico
+						    
+    <table>
+        <tr>
+            <td>
+                MEJORADO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/bloodthirster.png" width="150"></td>
+            <td>
+                <p>
+                    La Sanguinaria
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    El vampirismo físico genera un escudo
+                </p>
+            </td>
+            <td><img alt="" src="items/statikkshiv.png" width="150"></td>
+            <td>
+                <p>
+                    Daga de Statikk
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/bladeoftheruinedking.png" width="150"></td>
+            <td>
+                <p>
+                    Espada del Rey Arruinado
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/rapidfirecannon.png" width="150"></td>
+            <td>
+                <p>
+                    Cañón de Fuego Rápido
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el alcance de ataque
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/runaanshurricane.png" width="150"></td>
+            <td>
+                <p>
+                    Huracán de Runaan
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques a distancia impactan en 3 objetivos
+                </p>
+            </td>
+            <td><img alt="" src="items/youmuusghostblade.png" width="150"></td>
+            <td>
+                <p>
+                    Espada Fantasma de Youmuu
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/duskbladeofdraktharr.png" width="150"></td>
+            <td>
+                <p>
+                    Hoja Crepuslcular de Drakharr
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/infinityedge.png" width="150"></td>
+            <td>
+                <p>
+                    Filo del Infinito
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el daño de los golpes críticos
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/mortalreminder.png" width="150"></td>
+            <td>
+                <p>
+                    Recordatorio Mortal
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de armadura (+30%)
+                </p>
+            </td>
+            <td><img alt="" src="items/blackcleaver.png" width="150"></td>
+            <td>
+                <p>
+                    La Cuchilla Oscura
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    El daño físico reduce la armadura
+                </p>
+            </td>
+            <td><img alt="" src="items/manamune.png" width="150"></td>
+            <td>
+                <p>
+                    Manamune
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Convierte maná en daño de ataque
+                </p>
+            </td>
+            <td><img alt="" src="items/trinityforce.png" width="150"></td>
+            <td>
+                <p>
+                    Fuerza de la Trinidad
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    De todo un poco
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/mawofmalmortius.png" width="150"></td>
+            <td>
+                <p>
+                    Fauces de Malmortius
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Recibir daño mágico activa un escudo
+                </p>
+            </td>
+            <td><img alt="" src="items/deathsdance.png" width="150"></td>
+            <td>
+                <p>
+                    Danza de la Muerte
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Retrasa el daño recibido
+                </p>
+            </td>
+            <td><img alt="" src="items/phantomdancer.png" width="150"></td>
+            <td>
+                <p>
+                    Bailarín Espectral
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Otorga un escudo al tener poca vida
+                </p>
+            </td>
+            <td><img src="items/umbralglaive.png" alt="" width="150"></td>
+            <td>
+                <p>
+                    Espada de Penumbra
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Desactiva periódicamente centinelas enemigos cercanos
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                NIVEL MEDIO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/vampiricscepter.png" width="150"></td>
+            <td>
+                <p>
+                    Cetro Vampírico
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/zeal.png" width="150"></td>
+            <td>
+                <p>
+                    Fervor
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/kircheisshard.png" width="150"></td>
+            <td>
+                <p>
+                    Fragmento de Kircheis
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/serrateddirk.png" width="150"></td>
+            <td>
+                <p>
+                    Puñal Serrado
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de armadura (+10%)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/recurvebow.png" width="150"></td>
+            <td>
+                <p>
+                    Arco Recurvado
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/bfsword.png" width="150"></td>
+            <td>
+                <p>
+                    Espadón
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/cloakofagility.png" width="150"></td>
+            <td>
+                <p>
+                    Capa de Agilidad
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/lastwhisper.png" width="150"></td>
+            <td>
+                <p>
+                    Último Suspiro
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de armadura (+15%)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/executionerscalling.png" width="150"></td>
+            <td>
+                <p>
+                    El Llamado del Verdugo
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    El daño físico reduce la curación de los enemigos
+                </p>
+            </td>
+            <td><img alt="" src="items/phage.png" width="150"></td>
+            <td>
+                <p>
+                    Bacteriófago
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques aumentan la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/stinger.png" width="150"></td>
+            <td>
+                <p>
+                    Aguijón
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/caulfieldswarhammer.png" width="150"></td>
+            <td>
+                <p>
+                    Martillo de Guerra de Caulfield
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BÁSICO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/longsword.png" width="150"></td>
+            <td>
+                <p>
+                    Espada Larga
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/brawlersgloves.png" width="150"></td>
+            <td>
+                <p>
+                    Guantes de Pelea
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/dagger.png" width="150"></td>
+            <td>
+                <p>
+                    Daga
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+    </table>
+						
+						</li>
+						<li class="magia">
+						    Magia
+    
+    <table>
+        <tr>
+            <td>
+                MEJORADO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/ludensecho.png" width="150"></td>
+            <td>
+                <p>
+                    Eco de Luden
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las habilidades infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/morellonomicon.png" width="150"></td>
+            <td>
+                <p>
+                    Morellonomicón
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    El daño mágico reduce la curación de los enemigos
+                </p>
+            </td>
+            <td><img alt="" src="items/voidstaff.png" width="150"></td>
+            <td>
+                <p>
+                    Báculo del Vacío
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de magia (+40%)
+                </p>
+            </td>
+            <td><img alt="" src="items/rabadonsdeathcap.png" width="150"></td>
+            <td>
+                <p>
+                    Sombrero Mortífero de Rabadon
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el poder de habilidad
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/rylaiscrystalscepter.png" width="150"></td>
+            <td>
+                <p>
+                    Cetro de Cristal de Rylai
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las habilidades aplican ralentizaciones
+                </p>
+            </td>
+            <td><img alt="" src="items/liandrystorment.png" width="150"></td>
+            <td>
+                <p>
+                    El Tormento de Liandri
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las habilidades infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/rodofages.png" width="150"></td>
+            <td>
+                <p>
+                    Vara de las Edades
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las estadísticas aumentan con el tiempo
+                </p>
+            </td>
+            <td><img alt="" src="items/lichbane.png" width="150"></td>
+            <td>
+                <p>
+                    Maldición del Liche
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional tras lanzar habilidades
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/archangelsstaff.png" width="150"></td>
+            <td>
+                <p>
+                    Báculo del Arcángel
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Convierte maná en poder de habilidad
+                </p>
+            </td>
+            <td><img alt="" src="items/nashorstooth.png" width="150"></td>
+            <td>
+                <p>
+                    Diente de Nashor
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/ardentcenser.png" width="150"></td>
+            <td>
+                <p>
+                    Pebetero Ardiente
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de ataque de los aliados
+                </p>
+            </td>
+            <td><img alt="" src="items/hextechgunblade.png" width="150"></td>
+            <td>
+                <p>
+                    Sablepistola Hextech
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Cura al infligir daño físico y mágico
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/harmonicecho.png" width="150"></td>
+            <td>
+                <p>
+                    Eco Armónico
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las habilidades otorgan efectos de curación
+                </p>
+            </td>
+            <td><img alt="" src="items/athenesunholygrail.png" width="150"></td>
+            <td>
+                <p>
+                    Grial Impío de Athene
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Convierte el daño en curación
+                </p>
+            </td>
+            <td><img alt="" src="items/awakenedsoulstealer.png" width="150"></td>
+            <td>
+                <p>
+                    Despertar de Robaalmas
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los asesinatos reducen el enfriamiento de tu definitiva
+                </p>
+            </td>
+            <td><img src="items/infinityorb.png" alt="" width="150"></td>
+            <td>
+                <p>
+                    Orbe del Infinito
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Las habilidades infligen daño adicional
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                NIVEL MEDIO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/tearofthegoddess.png" width="150"></td>
+            <td>
+                <p>
+                    Lágrima de Diosa
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el maná
+                </p>
+            </td>
+            <td><img alt="" src="items/aetherwisp.png" width="150"></td>
+            <td>
+                <p>
+                    Brisa de Éter
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/lostchapter.png" width="150"></td>
+            <td>
+                <p>
+                    Capítulo Perdido
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reduce el enfriamiento de las habilidades
+                </p>
+            </td>
+            <td><img alt="" src="items/fiendishcodex.png" width="150"></td>
+            <td>
+                <p>
+                    Códice Diabólico
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/blastingwand.png" width="150"></td>
+            <td>
+                <p>
+                    Varita Explosiva
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/needlesslylargerod.png" width="150"></td>
+            <td>
+                <p>
+                    Vara Innecesariamente Grande
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/hauntingguise.png" width="150"></td>
+            <td>
+                <p>
+                    Antifaz Embujado
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el daño en combate
+                </p>
+            </td>
+            <td><img alt="" src="items/sheen.png" width="150"></td>
+            <td>
+                <p>
+                    Brillo
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques infligen daño adicional tras lanzar habilidades
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/hextechrevolver.png" width="150"></td>
+            <td>
+                <p>
+                    Revólver Hextech
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques y las habilidades infligen daño adicional
+                </p>
+            </td>
+            <td><img alt="" src="items/oblivionorb.png" width="150"></td>
+            <td>
+                <p>
+                    Orbe del Olvido
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de Magia (+15%)
+                </p>
+            </td>
+            <td><img alt="" src="items/voidamethyst.png" width="150"></td>
+            <td>
+                <p>
+                    Amatista del Vacío
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Penetración de magia (+20%)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BÁSICO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/sapphirecrystal.png" width="150"></td>
+            <td>
+                <p>
+                    Cristal de Zafiro
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/amplifyingtome.png" width="150"></td>
+            <td>
+                <p>
+                    Libro Amplificador
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+    </table>
+						
+						</li>
+						<li class="defensa">
+                            Defensa
+    
+    <table>
+        <tr>
+            <td>
+                MEJORADO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/guardianangel.png" width="150"></td>
+            <td>
+                <p>
+                    Ángel Guardián
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Revive al morir
+                </p>
+            </td>
+            <td><img alt="" src="items/sunfirecape.png" width="150"></td>
+            <td>
+                <p>
+                    Égida de Fuego Solar
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Quema a los enemigos cercanos
+                </p>
+            </td>
+            <td><img alt="" src="items/spiritvisage.png" width="150"></td>
+            <td>
+                <p>
+                    Apariencia Espiritual
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la curación recibida
+                </p>
+            </td>
+            <td><img alt="" src="items/randuinsomen.png" width="150"></td>
+            <td>
+                <p>
+                    Presagio de Randuin
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reduce la velocidad de ataque del enemigo
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/thornmail.png" width="150"></td>
+            <td>
+                <p>
+                    Cota de Espinas
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Refleja  el daño y reduce la curación de los enemigos
+                </p>
+            </td>
+            <td><img alt="" src="items/frozenmallet.png" width="150"></td>
+            <td>
+                <p>
+                    Mazo de Hielo
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques aplican ralentizaciones
+                </p>
+            </td>
+            <td><img alt="" src="items/warmogsarmor.png" width="150"></td>
+            <td>
+                <p>
+                    Armadura de Warmog
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Regeneración de vida fuera de combate
+                </p>
+            </td>
+            <td><img alt="" src="items/steraksgage.png" width="150"></td>
+            <td>
+                <p>
+                    Guantelete de Sterak
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Recibir daño activa un escudo
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/iceborngauntlet.png" width="150"></td>
+            <td>
+                <p>
+                    Guantelete del Hijo del Hielo
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los ataques crean un campo de ralentización
+                </p>
+            </td>
+            <td><img alt="" src="items/deadmansplate.png" width="150"></td>
+            <td>
+                <p>
+                    Placa del Hombre Muerto
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/abyssalmask.png" width="150"></td>
+            <td>
+                <p>
+                    Máscara Abisal
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los enemigos son vulnerables al daño mágico
+                </p>
+            </td>
+            <td><img alt="" src="items/zekesconvergence.png" width="150"></td>
+            <td>
+                <p>
+                    Convergencia de Zeke
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta el daño de ataque de los aliados
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/protectorsvow.png" width="150"></td>
+            <td>
+                <p>
+                    Juramento del Protector
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Protege a los aliados
+                </p>
+            </td>
+            <td><img alt="" src="items/wintersapproach.png" width="150"></td>
+            <td>
+                <p>
+                    Llegada del Invierno
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Convierte maná en aceleración de habilidad
+                </p>
+            </td>
+            <td><img alt="" src="items/frozenheart.png" width="150"></td>
+            <td>
+                <p>
+                    Corazón de Hielo
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reduce la velocidad de ataque de los enemigos cercanos
+                </p>
+            </td>
+            <td><img src="items/forceofnature.png" alt="" width="150"></td>
+            <td>
+                <p>
+                    Fuerza de la Naturaleza
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Resistencia mágica y velocidad de movimiento acumulables
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                NIVEL MEDIO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/bamiscinder.png" width="150"></td>
+            <td>
+                <p>
+                    Ceniza de Bami
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Quema a los enemigos cercanos
+                </p>
+            </td>
+            <td><img alt="" src="items/spectrescowl.png" width="150"></td>
+            <td>
+                <p>
+                    Hábito del Espectro
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la regeneración de vida al recibir daño
+                </p>
+            </td>
+            <td><img alt="" src="items/kindlegem.png" width="150"></td>
+            <td>
+                <p>
+                    Gemaluz
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/giantsbelt.png" width="150"></td>
+            <td>
+                <p>
+                    Cinturón de Gigante
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/wardensmail.png" width="150"></td>
+            <td>
+                <p>
+                    Cota del Guardabosques
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reduce la velocidad de ataque del enemigo
+                </p>
+            </td>
+            <td><img alt="" src="items/catalystofaeons.png" width="150"></td>
+            <td>
+                <p>
+                    Catalizador de Eones
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Consume maná para curar
+                </p>
+            </td>
+            <td><img alt="" src="items/chainvest.png" width="150"></td>
+            <td>
+                <p>
+                    Cota de malla
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/bramblevest.png" width="150"></td>
+            <td>
+                <p>
+                    Vesta Espinosa
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Refleja el daño y reduce la curación de los enemigos
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/jaurimsfist.png" width="150"></td>
+            <td>
+                <p>
+                    Puño de Jaurim
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/hexdrinker.png" width="150"></td>
+            <td>
+                <p>
+                    Sorbechizos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Recibir daño mágico activa un escudo
+                </p>
+            </td>
+            <td><img alt="" src="items/wingedmoonplate.png" width="150"></td>
+            <td>
+                <p>
+                    Placa Lunar Alada
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/negatroncloak.png" width="150"></td>
+            <td>
+                <p>
+                    Capa de Negatrones
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/glacialshroud.png" width="150"></td>
+            <td>
+                <p>
+                    Sudario Glacial
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BÁSICO
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/rubycrystal.png" width="150"></td>
+            <td>
+                <p>
+                    Cristal de Rubí
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/clotharmor.png" width="150"></td>
+            <td>
+                <p>
+                    Armadura de Tela
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+            <td><img alt="" src="items/nullmagicmantle.png" width="150"></td>
+            <td>
+                <p>
+                    Manto Anulamagia
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    
+                </p>
+            </td>
+        </tr>
+    </table>
+                        
+                        </li>
+                        <li class="botas">
+                            Botas
+    
+    <table>
+        <tr>
+            <td>
+                MEJORADO
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                ENCANTAMI
+            </td>
+            <td>
+                ENTOS
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/gluttonousgreaves.png" width="150"></td>
+            <td>
+                <p>
+                    Grebas Glotonas
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Vampirismo mágico y físico
+                </p>
+            </td>
+            <td><img alt="" src="items/bootsofswiftness.png" width="150"></td>
+            <td>
+                <p>
+                    Botas de Rapidez
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/stasisenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Estasis
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Se vuelve invulnerable
+                </p>
+            </td>
+            <td><img alt="" src="items/locketenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Relicario
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Escudo de equipo
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/mercurystreads.png" width="150"></td>
+            <td>
+                <p>
+                    Botas de Mercurio
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Tenacidad
+                </p>
+            </td>
+            <td><img alt="" src="items/ninjatabi.png" width="150"></td>
+            <td>
+                <p>
+                    Punteras de Acero Revestidas
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Armadura
+                </p>
+            </td>
+            <td><img alt="" src="items/gloriousenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento Glorioso
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la velocidad de movimiento
+                </p>
+            </td>
+            <td><img alt="" src="items/protobeltenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Protocinturón
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Desplazamiento pequeño
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/ionianbootsoflucidity.png" width="150"></td>
+            <td>
+                <p>
+                    Botas Jonias de la Lucidez
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento
+                </p>
+            </td>
+            <td></td>
+            <td></td>
+            <td><img alt="" src="items/quicksilverenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Fajín de Mercurio
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Elimina el control de masas
+                </p>
+            </td>
+            <td><img alt="" src="items/gargoyleenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Gárgola
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la vida
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BÁSICO
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img alt="" src="items/redeemingenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Redención
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Curación
+                </p>
+            </td>
+            <td><img src="items/shadowsenchant.png" alt="" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Sombras
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reduce la velocidad de movimiento del enemigo
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="items/bootsofspeed.png" width="150"></td>
+            <td>
+                <p>
+                    Botas de Velocidad
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Velocidad de movimiento
+                </p>
+            </td>
+            <td></td>
+            <td></td>
+            <td><img alt="" src="items/teleportenchant.png" width="150"></td>
+            <td>
+                <p>
+                    Encantamiento de Teleportación
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Teleportación a lo largo del mapa
+                </p>
+            </td>
+        </tr>
+    </table>
+                        
+                        </li>
+                    </ul>
+            </li>
+        
+            <li class="runas">
+                <img src="runes/sweettooth.png" alt="runas" width="59px">
+                <br>Runas
+                
+    <table>
+        <tr class="clave">
+            <td>
+                Clave
+            </td>
+        </tr>
+        <tr class="clave">
+            <td><img alt="" src="runes/electrocute.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Electrocutar_____________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Alcanzar a un campeón con 3 ataques o habilidades separados dentro de 3 seg inflige daño adaptable adicional.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Daño: 30 - 184<br>
+                    Enfriamiento: 25 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/aery.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Aery___________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Tus ataques y habilidades envían a Aery a un objetivo, lo que inflige daño a enemigos o escuda a aliados.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Daño: 10 a 60<br>
+                    Escudo: 20 a 120<br>
+                    No puedes volver a lanzar a Aery hasta que regrese a ti.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/phaserush.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Fase_veloz_____________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Alcanzar a un campeón con 3 habilidades o ataques diferentes en 4 otorga una gran mejora de velocidad de movimiento y resistencia a ralentizaciones.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Duración de la mejora: 3 seg<br>
+                    Velocidad de movimiento adicional: Cuerpo a cuerpo: 40% - 60% | A distancia: 30%-50%<br>
+                    Resistencia a ralentizaciones: 75%<br>
+                    Enfriamiento: 15 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/conqueror.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Conquistador____________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Obtienes acumulaciones de fuerza adaptable al atacar a un campeón con habilidades o ataques separados. Se acumula hasta 5 veces. Al alcanzar el máximo de acumulaciones, inflige daño adaptable adicional a campeones.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Por acumulación: 2 - 6 de Daño de Ataque adicional o 3 - 9 de Poder de Habilidad<br>
+                    Efecto adicional con el máximo de acumulaciones: Cuerpo a cuerpo: 10% | A distancia: 7% de daño adaptable adicional a campeones.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/fleetfootwork.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Sobre_la_Marcha________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Al atacar, moverte y lanzar habilidades, juntas acumulaciones de Energía. Al llegar a 100 acumulaciones, tu siguiente ataque te curará y te otorgará velocidad de movimiento aumentada.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Curación: 15 - 85<br>
+                    Velocidad de Movimiento adicional: 20% durante 1 seg.<br>
+                    En campeones a distancia, cura un 30% al atacar súbditos.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/graspoftheundying.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Agarre_del_Perpetuo_____</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Cada 4 seg en combate, tu siquiente ataque contra un campeón se potenciará según tu vida máxima.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Curación: 2% de tu Vida Máxima<br>
+                    Aumenta tu Vida permanentemente en 5<br>
+                    Daño adicional: 4% de tu Vida Máxima como daño mágico<br>
+                    Los efectos se reducen en un 40% para campeones a distancia.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/aftershock.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Réplica________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Tras inmovilizar a un campeón enemigo, obtienes resistencias y después infliges una ráfaga de daño mágico a tu alrededor.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Resistencias: 35 de Armadura + 60% adicional y 35 de Resistencia Mágica + 60% adicional durante 2,5 seg<br>
+                    Daño: 12-110 de daño mágico<br>
+                    Enfriamiento: 20 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/fontoflife.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Fuente_de_Vida_________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Alcanzar a un campeón enemigo con un ataque o una habilidad los marcará. Cuando tú o tus aliados dañen a campeones marcados, tú y esos aliados se curarán. Cada aliado puede activar esta curación una vez por marca.
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Curación de aliado: Un 6% de tu Vida Máxima<br>
+                    Autocuración: Un 2% de tu Vida Máxima<br>
+                    Duración de la marca: 4 seg
+                    Enfriamiento: 6 seg para campeones cuerpo a cuerpo, 10 seg para campeones a distancia.<br>
+                    Las curaciones subsecuentes de otras marcas de aliados se reducen un 25%.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+        </tr>
+        <tr class="dominio">
+            <td>
+                Dominación
+            </td>
+        </tr>
+        <tr class="dominio">
+            <td></td>
+            <td><img alt="" src="runes/brutal.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Brutalidad______________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 7 de Daño de Ataque y un 2% de Penetración de Armadura o 14 de Poder de Habilidad y un 2% de Penetración de Magia (adaptable).
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/gatheringstorm.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Tormenta_Creciente______</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Cada 3 minutos, obtienes Daño de Ataque adaptable o Poder de Habilidad, que da un total de 2, 5, 9, 14, etc. o 4, 10, 18, 28, etc., según el tiempo de la partida.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/huntervampirism.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Cazador:_Vampirismo_____</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 2% de Vampirisimo Físico o 2% de Vampirismo Mágico. Los derribos de campeones únicos otorgan 2 de Daño de Ataque con un 1% de Vampirismo Físico o 4 de Poder de Habilidad con un 1% de Vampirismo Mágico (adaptable).
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/triumph.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Triunfo_________________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Los derribos de campeones restauran un 10% de tu Vida faltante. Inflige 3% de daño adicional a enemigos con menos del 35% de Vida.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/weakness.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Fragilidad______________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Reducir el movimiento de campeones enemigos hará que reciban un 5% de daño adicional durante los siguientes 5 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/champion.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Campeón______________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes un 8% de daño contra campeones. Pierdes un 4% cada vez que mueres hasta que el efecto desaparezca.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td></td>
+        </tr>
+        <tr class="valor">
+            <td>
+                Valor
+            </td>
+        </tr>
+        <tr class="valor">
+            <td></td>
+            <td><img alt="" src="runes/adaptivecarapace.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Coraza_Adaptable________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Otorga 50 de Vida. Mientras estés por debajo del 50% de Vida, obtienes 12 de Armadura o 12 de Resistencia Mágica según el tipo de daño que más recibiste en los ultimos 60 seg. (Físico otorga Armadura | Mágico otorga Resistencia Mágica)
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/conditioning.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Acondicionamiento_______</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 8 de Armadura y Resistencia Mágica adicionales tras 5 minutos de partida. Cada 2 minutos posteriores obtienes 2 Armadura y Resistencia Mágica adicional.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/huntertitan.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Cazador:_Titán__________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 20 de Vida Máxima. Los derribos de campeones únicos otorgan 20 de Vida Máxima y un 4% de Tenacidad.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/secondwind.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Segundo_Aire___________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Gana 6 de Vida cada 5 seg.<br>
+                    Después de recibir daño de un campeón enemigo, regenera 6 (+3 de tu Vida faltante) a lo largo de los próximos 10 seg. Este efecto se duplica para campeones cuerpo a cuerpo.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/loyalty.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Lealtad________________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 2 de Armadura y 5 de Resistencia Mágica. El campeón aliado más cercano a ti obtiene 5 de Armadura y 2 de Resistencia Mágica.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/boneplating.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Coraza_Ósea___________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Después de recibir daño de un campeón, las siguientes 3 habilidades o ataques de un campeón contra ti dentro de 1,5 seg infligen de 30 a 60 menos daño (45 seg de Enfriamiento).
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td></td>
+        </tr>
+        <tr class="inspiracion">
+            <td>
+                Inspiración
+            </td>
+        </tr>
+        <tr class="inspiracion">
+            <td></td>
+            <td><img alt="" src="runes/pathfinder.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Pionero________________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes un 8% de Velocidad de Movimiento en maleza, jungla y río fuera del combate.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/mastermind.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Mente_Maestra__________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Infliges un 10% de daño verdadero adicional a monstruos épicos y un 10% de daño adicional (adaptable) a torretas. Obtienes 120 de oro adicional tras derribar o ayudar a derribar estos objetivos.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/huntergenius.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Cazador:_Genio_________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes 2,5 de Aceleración de Habilidad. Los derribos de campeones únicos otorgan 2,5 de Aceleración de Hbilidad.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/sweettooth.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Dulces_Frutos___________</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Aumenta la curación de Frutamiel en un 25%. Cada vez que tú o un aliado cercano coma una Frutamiel, obtienes 20 de oro.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/packhunter.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Cazador_en_Manada_____</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Obtienes un 2% de Velocidad de Movimiento al estar cerca de campeones aliados. Por cada aliado único con el que participes en un derribo, obtienes 50 de Oro y el aliado 50 de Oro.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="runes/manaflowband.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Anillo_de_Flujo_de_Maná</u>
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Alcanzar a un campeón con una habilidad o ataque potenciado aumenta permanentemente tu Maná Máximo en 30, hasta 300 de Maná.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+            </li>
+            
+            <li class="hechizos">
+                <img src="spells/SummonerFlash.png" alt="hechizos" width="59px">
+                <br>Hechizos   
+          
+    <table>
+        <tr>
+            <td><img alt="" src="spells/SummonerHaste.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Fantasma________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 90 seg<br>
+                    Otorga una gran mejora de Velocidad de movimiento que decae a un 25% de Velocidad de Movimiento adicional durante 8 seg. Con cada derribo, la duración de Fantasma se extiende 6 seg y restablece sus efectos hasta la cantidad original.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerMark.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Marca_y_Salto____________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapa disponible: Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 40 seg<br>
+                    Lanza una bola de nieve que marca y revela a un enemigo por un tiempo breve. Vuelve a lanzarlo para desplazarte hacia el enemigo marcado.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerHeal.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Curación________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 120 seg<br>
+                    Restaura 80 de vida (80-360) y otorga un 30% de Velocidad de Movimiento adicional durante 1 seg para ti y para el campeón aliado cercano más herido.<br>
+                    <br>
+                    La curación se reduce a la mitad para campeones que hayan recibido un efecto de curación recientemente.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="spells/SummonerClarity.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Claridad________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapa disponible: Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 90 seg<br>
+                    Restaura un 50% de tu Maná Máximo y un 25% del de aliados cercanos
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerBarrier.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Barrera________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 120 seg<br>
+                    Obtienes un escudo que absorbe 115 de daño (115-465) durante 2 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerExhaust.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Extenuación________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 105 seg<br>
+                    Extenúa al campeón enemigo objetivo, lo que reduce su Velocidad de Movimiento un 20% y el daño infligido un 40% durante 2,5 seg.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+        </tr>
+        <tr>
+            <td><img alt="" src="spells/SummonerFlash.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Destello________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 150 seg<br>
+                    Te teletransportas una distancia corta hacia delante o hacia la dirección objetivo.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerDot.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Ignición________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapas disponibles: Wild Rift, Abismo de los Lamentos
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 90 seg<br>
+                    Prende fuego al campeón enemigo objetivo, lo que inflige 60 de daño verdadero (60-410) durante 5 seg y le inflige Heridas Graves.<br>
+                    <br>
+                    Heridas Graves reduce los efectos de curación en un 50%
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+            <td><img alt="" src="spells/SummonerSmite.png" width="150">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    <u>Castigo________________________</u>
+                </p>
+                <p style="font-size: 10pt">
+                    Mapa disponible: Wild Rift
+                </p>
+                <p style="font-size: 10pt; color: #acacac">
+                    Enfriamiento: 10 seg<br>
+                    Inflige 440 de daño verdadero (440-1000) a un monstruo épico o grande, o a un súbdito. Usar Castigo sobre monstruos restaurará 70 de Vida (70 + 10%). Matar a 4 monstruos grandes mejora Castigo a Castigo Devastador o Catigo Desafiante, que puede utilizarse sobre campeones enemigos.<br>
+                    <br>
+                    Permiso para Cazar: Obtienes un 20% de experiencia adicional de monstruos de la jungla de forma permanente, pero obtienes un 20% menos de oro y experiencia de súbditos de forma temporal.<br>
+                    <br>
+                    Diente y Uña: Inflige un 10% más de daño mágico y te restauran 30 de Vida durante 5 seg.<br>
+                    <br>
+                    Obtiene un carga cada 45 seg, hasta un máximo de 2.
+                </p>
+            </td>
+        </tr>
+    </table>
+            </td>
+        </tr>
+    </table>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</body>
+</html>
